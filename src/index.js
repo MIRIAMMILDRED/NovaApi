@@ -8,7 +8,9 @@ const companyRoutes = require('./routes/companyRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const otpRoutes = require('./routes/otpRoutes');
 const teamRoutes = require('./routes/teamRoutes'); 
- // Import the OTP routes
+const logoutRoutes = require('./routes/logoutRoutes');
+const ticketRoutes = require('./routes/ticketRoutes');
+ 
 
 // Create an instance of the express application
 const app = express();
@@ -21,6 +23,8 @@ app.use(express.json());
 app.use('/api/otp', otpRoutes);
 app.use('/api/auth',loginRoutes);
 app.use('/api/team', teamRoutes);
+app.use('/api/logout', logoutRoutes);
+app.use('/api/tickets', ticketRoutes);
 app.use(healthCheckRoute);
 app.use(companyRoutes);
 app.use(notFoundRoute);
